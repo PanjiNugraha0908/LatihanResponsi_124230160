@@ -8,9 +8,7 @@ class ApiService {
   // Get all amiibos
   static Future<List<Amiibo>> getAllAmiibos() async {
     try {
-      final response = await http.get(
-        Uri.parse('$baseUrl/api/amiibo'),
-      );
+      final response = await http.get(Uri.parse('$baseUrl/api/amiibo'));
 
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
